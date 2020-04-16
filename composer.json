@@ -1,0 +1,16 @@
+{
+    "name": "msafiri.athumani/role_department",
+    "description": "This will generate userroles and department reports",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "maatwebsite/excel": "3.0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Msafiri\\RolesReports\\": "src/"
+        }
+    }
+    
+}
