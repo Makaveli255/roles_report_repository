@@ -11,6 +11,13 @@
         "psr-4": {
             "Msafiri\\RolesReports\\": "src/"
         }
+    },
+    "extra": {
+    "laravel": {
+        "providers": [
+            "Msafiri\\RolesReports\\RolesReportServiceProvider"
+        ],
     }
+},
     
 }
