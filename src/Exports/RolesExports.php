@@ -21,7 +21,11 @@ class RolesExports implements FromCollection, WithHeadings
 
     public function collection()
     {
-        return $this->data;
+        $arr = array();
+        foreach ($this->data as $data) {
+            $arr[] = (array)$data;
+        }
+        return collect($arr);
     }
     public function headings(): array
     {
