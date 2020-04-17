@@ -25,7 +25,7 @@ class RolesReportController extends Controller
     	->leftJoin(config('roles_dept.rolesTable.tablename'),config('roles_dept.rolesTable.tablename').'.'.config('roles_dept.rolesTable.roleIdColumn'),'=',config('roles_dept.userRoleTable.tablename').'.'.config('roles_dept.userRoleTable.roleIdColumn'))
     	->leftJoin(config('roles_dept.deptTable.tablename'),config('roles_dept.deptTable.tablename').'.'.config('roles_dept.deptTable.deptIdColumn'),'=',config('roles_dept.usersTable.tablename').'.'.config('roles_dept.usersTable.deptIdColumn'))
     	->get();
-    	return $users;
+    	// return $users;
     	return Excel::download(new RolesExports($users),'user_roles.xlsx');
     	}elseif (config('roles_dept.startHead.head') == "opt-two") {
     	$users = DB::table(config('roles_dept.usersTable.tablename'))
