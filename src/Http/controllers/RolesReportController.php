@@ -1,6 +1,6 @@
 <?php
 
-namespace Msafiri\RolesReports\Http\controllers;
+namespace Msafiri\RolesReports\Http\Controllers;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -26,7 +26,7 @@ class RolesReportController extends Controller
     	->leftJoin(config('roles_dept.deptTable.tablename'),config('roles_dept.deptTable.tablename').'.'.config('roles_dept.deptTable.deptIdColumn'),'=',config('roles_dept.usersTable.tablename').'.'.config('roles_dept.usersTable.deptIdColumn'))
     	->get();
     	// return $users;
-    	return Excel::download(new RolesExports($users),'user_roles.xlsx');
+    	return Excel::download(new RolesExports((object)$users),'user_roles.xlsx');
     	}elseif (config('roles_dept.startHead.head') == "opt-two") {
     	$users = DB::table(config('roles_dept.usersTable.tablename'))
     	->select(config('roles_dept.usersTable.tablename').'.'.config('roles_dept.usersTable.userIdColumn'),config('roles_dept.deptTable.tablename').'.'.config('roles_dept.deptTable.deptIdColumn'),config('roles_dept.usersTable.firstnameColumn'),config('roles_dept.usersTable.middlenameColumn'),config('roles_dept.usersTable.lastnameColumn'),config('roles_dept.deptTable.tablename').'.'.config('roles_dept.deptTable.nameColumn').' as deptname',config('roles_dept.rolesTable.tablename').'.'.config('roles_dept.rolesTable.nameColumn').' as rolename',config('roles_dept.rolesTable.tablename').'.'.config('roles_dept.rolesTable.roleIdColumn'))
