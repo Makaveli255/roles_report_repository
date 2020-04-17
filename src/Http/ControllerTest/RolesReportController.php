@@ -1,6 +1,6 @@
 <?php
 
-namespace Msafiri\RolesReports\Http\Controllers;
+namespace Msafiri\RolesReports\Http\ControllerTest;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
