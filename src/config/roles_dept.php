@@ -3,17 +3,22 @@
 return [
 
 	//Option 1 => if use users table with intermidiate table of role_users
-	'startHead' => [
-        'head' => 'opt-one'
-	],
+	// 'startHead' => [
+ //        'head' => 'opt-one'
+	// ],
 
 	//if use users table with no intemediary role user table
 	// 'startHead' => [
  //        'head' => 'opt-two'
 	// ],
 
-	'usersTable' => [
-		'tablename' => 'main.users',
+	//Option 3 => if use users table with intermidiate table of role_permission
+	'startHeads' => [
+        'heads' => 'opt-three'
+	],
+
+	'usersTables' => [
+		'tablename' => 'users_test',
 		'userIdColumn' => 'id',
 		'firstnameColumn' => 'firstname',
 		'middlenameColumn' => 'middlename',
@@ -23,17 +28,29 @@ return [
 	],
 	'rolesTable'=> [
 		'roleIdColumn' => 'id',
-		'tablename' => 'main.roles',
+		'tablename' => 'roles',
 		'nameColumn' => 'name',
 	],
 	'deptTable'=> [
 		'deptIdColumn' => 'id',
-		'tablename' => 'main.units',
+		'tablename' => 'units',
 		'nameColumn' => 'name',
 	],
 	'userRoleTable' =>[
-        'tablename' => 'main.role_user',
+        'tablename' => 'role_user',
 		'userIdColumn' => 'user_id',
+		'roleIdColumn' => 'role_id',
+	],
+
+	'permissionTable' =>[
+        'tablename' => 'permissions',
+		'permisionIdColumn' => 'id',
+		'labelColumn' => 'label',
+	],
+
+	'rolePermissionTable' =>[
+        'tablename' => 'role_permissions',
+		'permissionIdColumn' => 'permission_id',
 		'roleIdColumn' => 'role_id',
 	]
 	
