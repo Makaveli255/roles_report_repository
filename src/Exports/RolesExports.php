@@ -36,6 +36,7 @@ class RolesExports implements FromCollection, WithHeadings
             'lastname',
             'unit',
             'role',
+             'permission',
         ];
     }
 }

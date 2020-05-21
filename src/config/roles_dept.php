@@ -18,7 +18,7 @@ return [
 	],
 
 	'usersTables' => [
-		'tablename' => 'users_test',
+		'tablename' => 'users',
 		'userIdColumn' => 'id',
 		'firstnameColumn' => 'firstname',
 		'middlenameColumn' => 'middlename',
@@ -34,7 +34,7 @@ return [
 	'deptTable'=> [
 		'deptIdColumn' => 'id',
 		'tablename' => 'units',
-		'nameColumn' => 'name',
+		'nameColumn' => 'code',
 	],
 	'userRoleTable' =>[
         'tablename' => 'role_user',
